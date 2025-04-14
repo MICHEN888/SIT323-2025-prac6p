@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: honeymi-app
+spec:
+  replicas: 3  
+  selector:
+    matchLabels:
+      app: honeymi-app
+  template:
+    metadata:
+      labels:
+        app: honeymi-app
+    spec:
+      containers:
+        - name: honeymi-app
+          image: honeymi/mi-6.1p:latest  
+          ports:
+            - containerPort: 80  
+  
